@@ -9,20 +9,27 @@
     @yield('title')
 
     <!-- CSS -->
-    @vite('resources/css/app.css')
-
+    @vite('resources/sass/app.scss')
 
 </head>
 
-<body class="container">
-    <header id = header>
+<body class="container-fluid">
 
-    </header>
+    <div id="header" class="sticky-top d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
+        <h4 class="my-0 mr-md-auto">Blog</h4>
+        <nav class="my-2 my-md-0 mr-md-3 d-flex ms-auto">
+            <a class="btn btn-outline-primary me-2" href="#">マイページ</a>
+            <a class="btn btn-outline-success" href="#">投稿</a>
+        </nav>
+    </div>
 
-    @yield('content')
+    <div id="main" class="pt-2 pb-2">
+        @yield('content')
+    </div>
 
-    <footer id = "footer">
-
-    </footer>
+    <div id="footer" class="fixed-bottom d-flex flex-column flex-md-row align-items-center p-1 px-md-4 border-top">
+        <h4 class="my-0 mr-md-auto">Blog</h4>
+    </div>
 </body>
+
 </html>
