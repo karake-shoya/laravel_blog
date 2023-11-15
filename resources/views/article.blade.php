@@ -6,6 +6,8 @@
 
 @section('content')
 
-<h1>みんなの記事</h1>
+<div class="contents">
+<h1>記事一覧</h1>
+</div>
 
 @endsection

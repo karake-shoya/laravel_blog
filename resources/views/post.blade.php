@@ -7,9 +7,15 @@
 @section('content')
 <div class="contents">
     <nav class="button d-flex align-items-center">
-        <a class="btn btn-outline-secondary me-2" href="#">画像</a>
-        <a class="btn btn-outline-secondary me-2" href="#">下書き保存</a>
-        <a class="btn btn-outline-secondary me-5" href="#">公開する</a>
+        <form action="#" method="POST">
+            <a class="btn btn-outline-secondary me-2" href="#">画像</a>
+        </form>
+        <form action="#" method="POST">
+            <a class="btn btn-outline-secondary me-2" href="#">下書き保存</a>
+        </form>
+        <form action="#" method="POST">
+            <a class="btn btn-outline-secondary me-5" href="#">公開する</a>
+        </form>
         <div class="length me-2">0</div>
         <div>文字</div>
     </nav>

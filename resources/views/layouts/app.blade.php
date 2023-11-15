@@ -16,10 +16,13 @@
 <body class="container-fluid">
 
     <div id="header" class="sticky-top d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
-        <h4 class="my-0 mr-md-auto">Blog</h4>
+        <a class="my-0 mr-md-auto" href="/home">
+            Blog
+            <img src="">
+        </a>
         <nav class="my-2 my-md-0 mr-md-3 d-flex ms-auto">
-            <a class="btn btn-outline-primary me-2" href="#">マイページ</a>
-            <a class="btn btn-outline-success" href="#">投稿</a>
+            <a class="btn btn-outline-primary me-2" href="/article">マイページ</a>
+            <a class="btn btn-outline-success" href="/post">投稿</a>
         </nav>
     </div>
 
