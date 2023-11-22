@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,5 @@ Route::get('/post', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
