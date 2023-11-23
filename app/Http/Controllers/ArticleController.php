@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Http\Controllers;
 
 use App\Models\Article;
@@ -7,12 +9,15 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+
+        return view('article', ['articles' => $articles]);
     }
 
     /**
@@ -29,7 +34,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         // フォームに入力された内容を変数に取得
-        $form = $request->all();
+        $form = $request->except('_token');
 
         // フォームに入力された内容をデータベースへ登録
         $article = new Article();

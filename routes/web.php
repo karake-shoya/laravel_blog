@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('article');
 });
 
-Route::get('/article', function () {
-    return view('article');
-});
-
 Route::get('/post', function () {
     return view('post');
 });
@@ -30,3 +26,5 @@ Route::get('/home', function () {
 });
 
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
+
+Route::get('/article', [ArticleController::class, 'index'])->name('article');
