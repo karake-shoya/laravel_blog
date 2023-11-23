@@ -9,10 +9,6 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $articles = Article::all();

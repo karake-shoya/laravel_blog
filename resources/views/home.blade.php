@@ -8,12 +8,4 @@
 
 <h1>みんなの記事</h1>
 
-@foreach($articles as $article)
-    <article class="article">
-
-            <h3>{{$article->title}}</h3>
-            <p>{{$article->body}}</p>
-        </a>
-    </article>
-@endforeach
 @endsection
