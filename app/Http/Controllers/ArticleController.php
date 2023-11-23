@@ -45,7 +45,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $article = ['article' => $article];
+        return view('show', $article);
     }
 
     /**
@@ -69,6 +70,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        return redirect(route('article'));
     }
 }
