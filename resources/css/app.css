@@ -1,3 +1,3 @@
-.form-control::placeholder{
-    color: #cccccc;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

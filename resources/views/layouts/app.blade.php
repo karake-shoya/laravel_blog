@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Site Info -->
-    @yield('title')
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- CSS -->
-    @vite('resources/sass/app.scss')
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-</head>
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
 
-<body class="container-fluid">
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
-    <div id="header" class="sticky-top d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
-        <a class="my-0 mr-md-auto" href="/home">
-            Blog
-            <img src="">
-        </a>
-        <nav class="my-2 my-md-0 mr-md-3 d-flex ms-auto">
-            <a class="btn btn-outline-primary me-2" href="/article">マイページ</a>
-            <a class="btn btn-outline-success" href="/post">投稿</a>
-        </nav>
-    </div>
-
-    <div id="main" class="pt-2 pb-2">
-        @yield('content')
-    </div>
-
-    <div id="footer" class="fixed-bottom d-flex flex-column flex-md-row align-items-center p-1 px-md-4 border-top">
-        <h4 class="my-0 mr-md-auto">Blog</h4>
-    </div>
-</body>
-
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+    </body>
 </html>
