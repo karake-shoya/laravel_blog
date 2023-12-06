@@ -47,3 +47,9 @@ Route::get('/article', [ArticleController::class, 'index'])->name('article');
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 Route::delete('articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
+});
