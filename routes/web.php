@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,17 +28,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-
-Route::get('/', function () {
-    return view('home');
-});
-
 Route::get('/post', function () {
     return view('post');
-});
-
-Route::get('/home', function () {
-    return view('home');
 });
 
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
@@ -48,8 +40,8 @@ Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('art
 
 Route::delete('articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    })->name('home');
-});
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/home/show/{article}', [HomeController::class, 'show'])->name('home.show');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
