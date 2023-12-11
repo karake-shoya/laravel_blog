@@ -21,9 +21,13 @@
             <img src="">
         </a>
         <nav class="my-2 my-md-0 mr-md-3 d-flex ms-auto">
-            <a class="btn btn-outline-dark me-2" href="/dashboard">アカウント</a>
-            <a class="btn btn-outline-primary me-2" href="/article">マイページ</a>
-            <a class="btn btn-outline-success" href="/post">投稿</a>
+            @auth
+                <a class="btn btn-outline-dark me-2" href="/dashboard">アカウント</a>
+                <a class="btn btn-outline-primary me-2" href="/article">マイページ</a>
+                <a class="btn btn-outline-success" href="/post">投稿</a>
+            @else
+                <a class="btn btn-outline-dark me-2" href="/register">ログイン</a>
+            @endauth
         </nav>
     </div>
 
