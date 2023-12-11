@@ -9,9 +9,12 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::all();
+        $articles = \Auth::user()->articles()->orderBy('created_at', 'desc')->get();
+        $data = [
+            'articles' => $articles,
+        ];
 
-        return view('article', ['articles' => $articles]);
+        return view('article', $data);
     }
 
     /**
@@ -32,6 +35,7 @@ class ArticleController extends Controller
 
         // フォームに入力された内容をデータベースへ登録
         $article = new Article();
+        $article->user_id = \Auth::id();
         $article->fill($form)->save();
 
         // 記事一覧画面を表示
