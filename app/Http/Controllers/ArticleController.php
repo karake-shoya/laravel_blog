@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class ArticleController extends Controller
 {
@@ -30,15 +33,24 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        // フォームに入力された内容を変数に取得
+        $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // adjust the validation rules as needed
+        ]);
+
         $form = $request->except('_token');
 
-        // フォームに入力された内容をデータベースへ登録
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('article_images', 'public');
+            $form['image'] = $imagePath;
+        }
+
         $article = new Article();
-        $article->user_id = \Auth::id();
+        $article->user_id = Auth::id();
         $article->fill($form)->save();
 
-        // 記事一覧画面を表示
         return redirect()->route('article');
     }
 

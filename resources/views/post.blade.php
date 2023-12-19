@@ -7,7 +7,7 @@
 @section('content')
     <div class="contents">
         <nav class="button d-flex align-items-center">
-            <form action="{{ route('article.store') }}" method="post">
+            <form action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name='image'>
                 <button type="submit" class="btn btn-outline-secondary me-5">公開する</button>
