@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="contents">
-        <h1>自分の記事一覧</h1>
+        <h1 class="pb-3">自分の記事一覧</h1>
 
         @foreach($articles->sortByDesc('created_at') as $article)
         <article class="article">
