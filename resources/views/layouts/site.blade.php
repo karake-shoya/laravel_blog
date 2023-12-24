@@ -15,7 +15,7 @@
 
 <body class="container-fluid">
 
-    <div id="header" class="sticky-top d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
+    <div id="header" class="sticky-top d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm bg-light">
         <a class="my-0 mr-md-auto" href="/home">
             Blog
             <img src="">
@@ -35,7 +35,7 @@
         @yield('content')
     </div>
 
-    <div id="footer" class="fixed-bottom d-flex flex-column flex-md-row align-items-center p-1 px-md-4 border-top">
+    <div id="footer" class="fixed-bottom d-flex flex-column flex-md-row align-items-center p-1 px-md-4 border-top bg-light">
         <h4 class="my-0 mr-md-auto">Blog</h4>
     </div>
 </body>

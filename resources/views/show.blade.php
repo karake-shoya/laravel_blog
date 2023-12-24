@@ -8,11 +8,11 @@
 
 <div class="contents">
 
-<article class="article-detail">
+<article class="article-detail mx-auto" style="max-width: 800px">
 
     {{-- Display the image if it exists --}}
     @if ($article->image)
-        <img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" class="img-fluid mb-4" style="max-width: 100%; height: auto;">
+        <img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" class="img-fluid mb-4 d-block mx-auto" style="max-width: 100%; height: auto;">
     @endif
 
     <h1 class="h1">{{ $article->title}}</h1>
@@ -22,7 +22,7 @@
 
     {{-- Display the delete button only if the user is the owner of the article --}}
     @if($article && Auth::check() && Auth::user()->id == $article->user_id)
-    <form action="{{ route('articles.destroy', $article) }}" method="post">
+    <form action="{{ route('articles.destroy', $article) }}" method="post" class="pb-5">
         @csrf
         @method('delete')
         <button type="submit" class="btn btn-outline-secondary text-danger">削除する</button>
