@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImageController;
+use App\Http\COntrollers\RepliesController;
 use Illuminate\Support\Facades\Route;
 
 /*

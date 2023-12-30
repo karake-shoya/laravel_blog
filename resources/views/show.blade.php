@@ -12,7 +12,7 @@
 
     {{-- Display the image if it exists --}}
     @if ($article->image)
-        <img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" class="img-fluid mb-4 d-block mx-auto" style="max-width: 100%; height: auto;">
+        <img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" class="mb-4 d-block mx-auto object-fit-cover">
     @endif
 
     <h1 class="h1">{{ $article->title}}</h1>

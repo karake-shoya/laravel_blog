@@ -31,7 +31,7 @@
         </nav>
     </div>
 
-    <div id="main" class="pt-2 pb-2">
+    <div id="main" class="pt-2 pb-5">
         @yield('content')
     </div>
 
