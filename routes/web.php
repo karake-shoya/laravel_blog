@@ -48,6 +48,4 @@ Route::get('/home/show/{article}', [HomeController::class, 'show'])->name('home.
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('home/show/{article}/like', [LikeController::class, 'like'])->name('like');
-
-Route::get('home/show/{article}/unlike', [LikeController::class, 'unlike'])->name('unlike');
+Route::get('home/show/{article}/toggle-like', [LikeController::class, 'toggleLike'])->name('toggle-like');
