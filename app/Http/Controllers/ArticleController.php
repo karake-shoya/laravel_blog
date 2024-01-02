@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Like;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -59,8 +60,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        $article = ['article' => $article];
-        return view('show', $article);
+        $like = Like::where('article_id', $article->id)->where('user_id', auth()->user()->id)->first();
+        return view('show', compact('article', 'like'));
     }
 
     /**

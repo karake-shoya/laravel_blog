@@ -18,6 +18,31 @@
     <h1 class="h1">{{ $article->title}}</h1>
     <div class="h5 pt-2 pb-3 border-bottom">{{ $article->created_at}}</div>
 
+    <span>
+        <img src="{{asset('storage/blog_images/nicebutton.png')}}" class="like-image">
+
+        <!-- もし$likeがあれば＝ユーザーが「いいね」をしていたら -->
+        @if(isset($like) && $like)
+        <!-- 「いいね」取消用ボタンを表示 -->
+            <a href="{{ route('unlike', $article) }}" class="btn btn-success btn-sm">
+                いいね
+                <!-- 「いいね」の数を表示 -->
+                <span class="badge">
+                    {{ $article->likes->count() }}
+                </span>
+            </a>
+        @else
+        <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+            <a href="{{ route('like', $article) }}" class="btn btn-secondary btn-sm">
+                いいね
+                <!-- 「いいね」の数を表示 -->
+                <span class="badge">
+                    {{ $article->likes->count() }}
+                </span>
+            </a>
+        @endif
+        </span>
+
     <div class="h3 pt-4">{!! nl2br(e($article->body))!!}</div>
 
     {{-- Display the delete button only if the user is the owner of the article --}}

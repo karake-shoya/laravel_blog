@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
 use App\Http\COntrollers\RepliesController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home/show/{article}', [HomeController::class, 'show'])->name('home.show');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('home/show/{article}/like', [LikeController::class, 'like'])->name('like');
+
+Route::get('home/show/{article}/unlike', [LikeController::class, 'unlike'])->name('unlike');
