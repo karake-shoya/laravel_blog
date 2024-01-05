@@ -26,7 +26,7 @@
                 <a class="btn btn-outline-primary me-2" href="/article">マイページ</a>
                 <a class="btn btn-outline-success" href="/post">投稿</a>
             @else
-                <a class="btn btn-outline-dark me-2" href="/register">ログイン</a>
+                <a class="btn btn-outline-dark me-2" href="/login">ログイン</a>
             @endauth
         </nav>
     </div>
