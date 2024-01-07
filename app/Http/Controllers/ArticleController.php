@@ -69,16 +69,40 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('edit', compact('article'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // adjust the validation rules as needed
+        ]);
+
+        $article = Article::find($id);
+
+        if (!$article) {
+            return redirect()->route('articles.index')->with('error', 'Article not found.');
+        }
+
+        $article->title = $request->input('title');
+        $article->body = $request->input('body');
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('article_images', 'public');
+            $article->image = $imagePath;
+        }
+
+        $article->save();
+
+        return redirect()->route('articles.show', $id)->with('success', '記事が更新されました。');
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -15,11 +15,17 @@
                     <a class="h2" href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>
                 </div>
                 <div class="col-6 text-end">
-                    <form action="{{ route('articles.destroy', $article) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-outline-secondary text-danger">削除する</button>
-                    </form>
+                    <div class="d-flex justify-content-end">
+                        <form action="{{ route('articles.edit', $article->id) }}" method="get">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-secondary text-secondary me-2">編集する</button>
+                        </form>
+                        <form action="{{ route('articles.destroy', $article) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-outline-secondary text-danger">削除する</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <p class="pt-2 border-bottom">{{ $article->created_at }}</p>

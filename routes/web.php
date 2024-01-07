@@ -38,8 +38,6 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 
 Route::get('/article', [ArticleController::class, 'index'])->name('article');
 
-Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
-
 Route::delete('articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -49,3 +47,5 @@ Route::get('/home/show/{article}', [HomeController::class, 'show'])->name('home.
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('home/show/{article}/toggle-like', [LikeController::class, 'toggleLike'])->name('toggle-like');
+
+Route::resource('articles', ArticleController::class);
