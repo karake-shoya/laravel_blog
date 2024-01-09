@@ -17,8 +17,7 @@
 
     <div id="header" class="sticky-top d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm bg-light">
         <a class="my-0 mr-md-auto" href="/home">
-            Blog
-            <img src="">
+            <img src="{{ asset('storage/blog_images/logo.jpg') }}" class="logo-image" alt="logo" style="width:50px; height:auto;">
         </a>
         <nav class="my-2 my-md-0 mr-md-3 d-flex ms-auto">
             @auth

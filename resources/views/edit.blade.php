@@ -12,7 +12,7 @@
 
             <input type="file" name='image' class="mt-3">
 
-            <button type="submit" class="btn btn-outline-secondary me-5">編集する</button>
+            <button type="submit" class="btn btn-outline-secondary me-5">編集して公開する</button>
 
             <input type="text" name="title" value="{{ $article->title }}" class="form-control form-control-lg custom-width fw-bold mt-3 fs-2"
             placeholder="記事タイトル" aria-label="タイトル入力">

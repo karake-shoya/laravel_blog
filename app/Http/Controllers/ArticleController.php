@@ -13,7 +13,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = \Auth::user()->articles()->orderBy('created_at', 'desc')->get();
+        $articles = Auth::user()->articles()->orderBy('created_at', 'desc')->get();
         $data = [
             'articles' => $articles,
         ];
