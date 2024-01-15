@@ -15,7 +15,7 @@
                     <a class="h2" href="{{ route('home.show', $article) }}">{{ $article->title }}</a>
                 </div>
             </div>
-            <p class="pt-2 border-bottom">{{ $article->created_at }}</p>
+            <p class="pt-2 border-bottom">投稿者：{{ $article->user->name }} {{ $article->created_at }}</p>
         </article>
     @endforeach
 
