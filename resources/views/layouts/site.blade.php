@@ -11,7 +11,6 @@
     <!-- CSS -->
     @vite('resources/sass/app.scss')
 
-
 </head>
 
 <body class="container-fluid">
@@ -54,7 +53,7 @@
     </div>
 
     <div id="footer" class="fixed-bottom d-flex flex-column flex-md-row align-items-center p-1 px-md-4 border-top bg-light">
-        <h4 class="my-0 mr-md-auto">Blog</h4>
+        <h4 class="my-0 mr-md-auto">LifeTrace</h4>
     </div>
 
     @vite('resources/js/app.js')

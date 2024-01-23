@@ -16,6 +16,7 @@
     @endif
 
     <h1 class="h1">{{ $article->title}}</h1>
+    <h5 class="pt-2">投稿者：{{ $article->user->name }}</p>
     <div class="h5 pt-2 pb-3 border-bottom">{{ $article->created_at}}</div>
 
     <span>
