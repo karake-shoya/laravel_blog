@@ -23,6 +23,28 @@
                                 <div class="mt-auto">
                                     <p class="border-top">投稿者：{{ $article->user->name }}</p>
                                     <p>{{ $article->created_at }}</p>
+                                    <span>
+                                        <!-- もし$likeがあれば＝ユーザーが「いいね」をしていたら -->
+                                        @if(isset($like) && $like)
+                                            <!-- 「いいね」取消用ボタンを表示 -->
+                                            <a href="{{ route('toggle-like', $article) }}" class="btn btn-success btn-sm">
+                                                ♡
+                                                <!-- 「いいね」の数を表示 -->
+                                                <span class="badge">
+                                                    {{ $article->likes->count() }}
+                                                </span>
+                                            </a>
+                                        @else
+                                            <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+                                            <a href="{{ route('toggle-like', $article) }}" class="btn btn-secondary btn-sm">
+                                                ♡
+                                                <!-- 「いいね」の数を表示 -->
+                                                <span class="badge">
+                                                    {{ $article->likes->count() }}
+                                                </span>
+                                            </a>
+                                        @endif
+                                    </span>
                                 </div>
                             </div>
                         </div>
