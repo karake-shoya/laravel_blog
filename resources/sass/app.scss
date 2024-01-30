@@ -42,3 +42,13 @@ article{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.navbar-nav .dropdown-menu {
+    margin-top: 0; // ドロップダウンメニューの上のマージンを削除
+    padding: 0; // パディングを削除
+}
+
+.navbar-nav .dropdown-item {
+    padding: .5rem 1rem; // ドロップダウンメニュー内の各アイテムのパディングを調整
+    white-space: nowrap; // テキストが折り返されないように設定
+}
