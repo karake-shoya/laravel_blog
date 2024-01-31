@@ -10,7 +10,7 @@
 
         <div class="row">
             @foreach($articles->sortByDesc('created_at') as $article)
-                <div class="col-md-3 mb-4 d-flex">
+                <div class="col-md-3 col-sm-6 mb-4 d-flex">
                     <article class="article w-100">
                         <div class="card h-100 d-flex flex-column" style="width:100%; height:150px;">
                             @if($article->image)
