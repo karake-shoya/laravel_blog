@@ -22,7 +22,7 @@
                                 <a class="h4 mb-3 ellipsis" href="{{ route('home.show', $article) }}" style="width:100%; height: 7rem;">{{ $article->title }}</a>
                                 <div class="mt-auto">
                                     <p class="border-top">投稿者：{{ $article->user->name }}</p>
-                                    <p>{{ $article->created_at }}</p>
+                                    <p>{{ $article->created_at->diffForHumans() }}</p>
                                     <span>
                                         <!-- もし$likeがあれば＝ユーザーが「いいね」をしていたら -->
                                         @if(isset($like) && $like)

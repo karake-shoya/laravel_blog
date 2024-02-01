@@ -14,7 +14,7 @@
                 <article class="article mb-5">
                     <div class="row">
                         <div class="col-12">
-                            <a class="h2" href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>
+                            <a class="h3" href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>
                             <div class="d-flex justify-content-end mt-1">
                                 <form action="{{ route('articles.edit', $article->id) }}" method="get">
                                     @csrf
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <h4 class="pt-2 border-bottom">{{ $article->created_at->format('Y-m-d H:i:s') }}</h4> <!-- 日付フォーマットの例 -->
+                    <p class="pt-2 border-bottom">午後{{ $article->created_at->format('h:i') }}・{{ $article->created_at->format('Y年m月d日') }}</p>
                 </article>
                 @endforeach
             </div>
