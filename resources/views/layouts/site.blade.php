@@ -50,8 +50,8 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Log Out') }}</a>
-                                <form method="POST" action="{{ route('logout') }}" class="d-none">
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log Out') }}</a>
+                                <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
                                     @csrf
                                 </form>
                             </div>
