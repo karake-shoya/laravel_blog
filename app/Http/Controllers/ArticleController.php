@@ -37,7 +37,7 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:8192', // adjust the validation rules as needed
+            'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:8192', // adjust the validation rules as needed
         ]);
 
         $form = $request->except('_token');
@@ -80,7 +80,7 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // adjust the validation rules as needed
+            'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048', // adjust the validation rules as needed
         ]);
 
         $article = Article::find($id);
