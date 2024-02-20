@@ -10,9 +10,7 @@
 
     <!-- CSS -->
 <!-- CSSファイル -->
-<link rel="stylesheet" href="{{ asset('build/assets/app-36dede55.css') }}">
-<link rel="stylesheet" href="{{ asset('build/assets/app-7e4a3f64.css') }}">
-<link rel="stylesheet" href="{{ asset('build/assets/app-e800bd3c.css') }}">
+@vite('resources/sass/app.scss')
 
 <!-- JavaScriptファイル -->
 <script type="module" src="{{ asset('build/assets/app-cc762d8f.js') }}"></script>
