@@ -10,6 +10,7 @@
 
     <!-- CSS -->
     @vite('resources/sass/app.scss')
+    @vite(['resources/css/app.scss'])
 
 </head>
 
