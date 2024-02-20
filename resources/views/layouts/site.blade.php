@@ -13,7 +13,6 @@
 @vite('resources/sass/app.scss')
 
 <!-- JavaScriptファイル -->
-<script type="module" src="{{ asset('build/assets/app-cc762d8f.js') }}"></script>
 
 </head>
 
