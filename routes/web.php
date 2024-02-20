@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikeController;
-use App\Http\COntrollers\RepliesController;
+use App\Http\Controllers\RepliesController;
 use Illuminate\Support\Facades\Route;
 
 /*
