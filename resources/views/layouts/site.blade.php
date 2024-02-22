@@ -9,8 +9,7 @@
     @yield('title')
 
     <!-- CSS -->
-<!-- CSSファイル -->
-@vite('resources/sass/app.scss')
+    @vite('resources/sass/app.scss')
 
 </head>
 
@@ -81,7 +80,6 @@
     </div>
 
     @vite('resources/js/app.js')
-
 </body>
 
 </html>
