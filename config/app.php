@@ -181,8 +181,10 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
+    'aliases' => Illuminate\Support\Facades\Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'File' => Illuminate\Support\Facades\File::class,
+        'App' => Illuminate\Support\Facades\App::class,
     ])->toArray(),
 
 ];
