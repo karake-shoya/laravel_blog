@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('build/assets/main-f6073249.css') }}">
 
     <!-- JavaScriptファイル -->
-    <script type="module" src="{{ asset('build/assets/app-37fb813b') }}"></script>
+    <script type="module" src="{{ asset('build/assets/app-37fb813b.js') }}"></script>
 
 </head>
 
