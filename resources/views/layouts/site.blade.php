@@ -32,7 +32,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- ナビゲーションバーのコンテンツ -->
-            <div class="navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     @auth
                         <!-- 中サイズ以上でボタンとして表示 -->
