@@ -37,7 +37,7 @@ article{
 .ellipsis {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;  /* 表示する行数を制限 */
+    -webkit-line-clamp: 3;  /* 表示する行数を制限 */
     overflow: hidden;
     text-overflow: ellipsis;
 }
