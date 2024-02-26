@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.ellipsis {
+    text-decoration: none;/* 記事のタイトルの下線を削除 */
+}
+
+.card-body {
+    height: 250px;/* 写真の下の文章の高さ確保 */
+}
+
+.container {
+    max-width: 1280px;/* ３列表示した時に使用してください */
+}
