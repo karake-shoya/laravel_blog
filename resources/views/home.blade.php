@@ -7,7 +7,6 @@
 @section('content')
 <div class="container mx-auto">
     <h1 class="pb-3">みんなの記事</h1>
-
     <div class="row">
         @foreach($articles->sortByDesc('created_at') as $article)
             <div class="col-md-4 col-sm-6 mb-4 d-flex">
@@ -55,3 +54,5 @@
             </div>
         @endforeach
     </div>
+</div>
+@endseciton
