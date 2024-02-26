@@ -5,7 +5,8 @@
 @import 'variables';
 
 // Bootstrap
-@import 'bootstrap/scss/bootstrap';
+@import 'public_html/node_modules/bootstrap/scss/bootstrap';
+
 
 .form-control::placeholder{
     color: #cccccc;
