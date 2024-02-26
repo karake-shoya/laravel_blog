@@ -11,8 +11,15 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('build/assets/app-5991efb9.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-98459431.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-c12f91e4.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/main-f6073249.css') }}">
+
+    <!-- JavaScriptファイル -->
+    <script type="module" src="{{ asset('build/assets/app-37fb813b.js') }}"></script>
+
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
