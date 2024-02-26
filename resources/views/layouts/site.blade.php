@@ -36,10 +36,10 @@
                 <ul class="navbar-nav ms-auto">
                     @auth
                         <!-- 中サイズ以上でボタンとして表示 -->
-                        <li class="nav-item d-none d-md-inline-block">
+                        <li class="nav-item d-none d-md-inline-block show">
                             <a class="btn btn-outline-success me-2" href="/post">投稿</a>
                         </li>
-                        <li class="nav-item d-none d-md-inline-block">
+                        <li class="nav-item d-none d-md-inline-block show">
                             <a class="btn btn-outline-primary me-2" href="/article">マイページ</a>
                         </li>
                         <!-- 中サイズ以下でハンバーガーメニュー内に表示 -->
@@ -50,7 +50,7 @@
                             <a class="nav-link" href="/article">マイページ</a>
                         </li>
                         <!-- ドロップダウンメニュー (全サイズで表示) -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown show">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </a>
@@ -63,7 +63,7 @@
                             </div>
                         </li>
                     @else
-                        <li class="nav-item d-none d-md-inline-block">
+                        <li class="nav-item d-none d-md-inline-block show">
                             <a class="btn btn-outline-dark me-2" href="/login">ログイン</a>
                         </li>
                         <!-- 中サイズ以下でハンバーガーメニュー内に表示 -->
