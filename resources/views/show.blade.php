@@ -8,7 +8,7 @@
 
 <div class="contents">
 
-<article class="article-detail mx-auto" style="max-width: 800px">
+<article class="article-detail mx-auto custom-width">
 
     {{-- Display the image if it exists --}}
     @if ($article->image)
