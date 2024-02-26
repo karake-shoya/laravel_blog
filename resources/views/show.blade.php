@@ -5,6 +5,14 @@
 @endsection
 
 @section('content')
+<script>
+    function checkLogin(event) {
+        @if(!auth()->check())
+            event.preventDefault();
+            alert('ログインが必要です。');
+        @endif
+    }
+</script>
 
 <div class="contents">
 
@@ -16,7 +24,7 @@
     @endif
 
     <h1 class="h1">{{ $article->title}}</h1>
-    <h5 class="pt-2">投稿者：{{ $article->user->name }}</p>
+    <h5 class="pt-2">投稿者：{{ $article->user->name }}</h5>
     <div class="h5 pt-2 pb-3 border-bottom">{{ $article->created_at}}</div>
 
     <span>
@@ -25,7 +33,7 @@
         <!-- もし$likeがあれば＝ユーザーが「いいね」をしていたら -->
         @if(isset($like) && $like)
             <!-- 「いいね」取消用ボタンを表示 -->
-            <a href="{{ route('toggle-like', $article) }}" class="btn btn-success btn-sm">
+            <a href="{{ route('toggle-like', $article) }}" class="btn btn-success btn-sm" onclick="checkLogin(event)">
                 いいね
                 <!-- 「いいね」の数を表示 -->
                 <span class="badge">
@@ -34,7 +42,7 @@
             </a>
         @else
             <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
-            <a href="{{ route('toggle-like', $article) }}" class="btn btn-secondary btn-sm">
+            <a href="{{ route('toggle-like', $article) }}" class="btn btn-secondary btn-sm" onclick="checkLogin(event)">
                 いいね
                 <!-- 「いいね」の数を表示 -->
                 <span class="badge">
