@@ -5,6 +5,14 @@
 @endsection
 
 @section('content')
+<script>
+    function checkLogin(event) {
+        @if(!auth()->check())
+            event.preventDefault();
+            alert('ログインが必要です。');
+        @endif
+    }
+</script>
 <div class="container mx-auto">
     <h1 class="pb-3">みんなの記事</h1>
     <div class="row">
@@ -13,39 +21,23 @@
                 <article class="article w-100">
                     <div class="card h-100 d-flex flex-column" style="width:100%">
                         @if($article->image)
-                        {{-- 画像の高さ変更 --}}
                             <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" style="width:100%; height:250px; object-fit:cover; border-radius: var(--bs-card-border-radius);">
                         @else
-                        {{-- 画像の高さ変更 --}}
                             <img src="{{ asset('storage/blog_images/logo.png') }}" alt="{{ $article->title }}" style="width:100%; height:250px; object-fit:contain; border-radius: var(--bs-card-border-radius);">
                         @endif
                         <div class="card-body d-flex flex-column">
-                            {{-- 高さの指定を削除 --}}
                             <a class="h4 mb-3 ellipsis" href="{{ route('home.show', $article) }}" style="width:100%;">{{ $article->title }}</a>
                             <div class="mt-auto">
                                 <p class="border-top">投稿者：{{ $article->user->name }}</p>
                                 <p>{{ $article->created_at->diffForHumans() }}</p>
                                 <span>
-                                    <!-- もし$likeがあれば＝ユーザーが「いいね」をしていたら -->
                                     @if(isset($like) && $like)
-                                        <!-- 「いいね」取消用ボタンを表示 -->
-                                        <a href="{{ route('toggle-like', $article) }}" class="btn btn-success btn-sm">
-                                            ♡
-                                            <!-- 「いいね」の数を表示 -->
-                                            <span class="badge">
-                                                {{ $article->likes->count() }}
-                                            </span>
-                                        </a>
+                                        <a href="{{ route('toggle-like', $article) }}" class="btn btn-success btn-sm" onclick="checkLogin(event)">
                                     @else
-                                        <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
-                                        <a href="{{ route('toggle-like', $article) }}" class="btn btn-secondary btn-sm">
-                                            ♡
-                                            <!-- 「いいね」の数を表示 -->
-                                            <span class="badge">
-                                                {{ $article->likes->count() }}
-                                            </span>
-                                        </a>
+                                        <a href="{{ route('toggle-like', $article) }}" class="btn btn-secondary btn-sm" onclick="checkLogin(event)">
                                     @endif
+                                            ♡ <span class="badge">{{ $article->likes->count() }}</span>
+                                        </a>
                                 </span>
                             </div>
                         </div>
