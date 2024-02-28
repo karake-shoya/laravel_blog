@@ -77,7 +77,7 @@
         <!-- ナビゲーションバーの終了 -->
     </div>
 
-    <div id="main" class="pt-2 pb-5">
+    <div id="main" class="pt-5 pb-5">
         @yield('content')
     </div>
 
